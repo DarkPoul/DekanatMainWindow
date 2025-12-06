@@ -1,0 +1,83 @@
+vaadin-login-overlay::part(overlay) {
+  background: #000;
+}
+
+vaadin-login-overlay::part(card) {
+  background: #000;
+  box-shadow: none;
+}
+
+vaadin-login-overlay::part(form-title),
+vaadin-login-overlay::part(form-description),
+vaadin-login-overlay::part(error-message),
+vaadin-login-overlay::part(forgot-password-button),
+vaadin-login-overlay::part(footer),
+vaadin-login-overlay::part(brand) {
+  display: none;
+}
+
+vaadin-login-overlay vaadin-text-field::part(input-field),
+vaadin-login-overlay vaadin-password-field::part(input-field) {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+vaadin-login-overlay vaadin-text-field::part(value),
+vaadin-login-overlay vaadin-password-field::part(value) {
+  color: #fff;
+}
+
+vaadin-login-overlay vaadin-text-field::part(label),
+vaadin-login-overlay vaadin-password-field::part(label) {
+  display: none;
+}
+
+vaadin-login-overlay vaadin-text-field::part(helper-text),
+vaadin-login-overlay vaadin-password-field::part(helper-text) {
+  display: none;
+}
+
+vaadin-login-overlay vaadin-login-form::part(form) {
+  background: transparent;
+}
+
+vaadin-login-overlay vaadin-login-form::part(vaadin-login-form-wrapper) {
+  background: transparent;
+}
+
+vaadin-login-overlay vaadin-button[theme~="primary"] {
+  position: relative;
+  background: linear-gradient(180deg, #d40000 0%, #6a0000 100%);
+  color: #fff;
+  border: none;
+  box-shadow: none;
+}
+
+vaadin-login-overlay vaadin-button[theme~="primary"]::before,
+vaadin-login-overlay vaadin-button[theme~="primary"]::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  width: 8px;
+  height: 12px;
+  background: #6a0000;
+  border-radius: 50% 50% 60% 60%;
+}
+
+vaadin-login-overlay vaadin-button[theme~="primary"]::before {
+  left: 35%;
+}
+
+vaadin-login-overlay vaadin-button[theme~="primary"]::after {
+  left: 60%;
+  height: 10px;
+}
+
+vaadin-login-overlay::part(form) {
+  background: transparent;
+}
+
+vaadin-login-overlay::part(error-message) {
+  display: none;
+}
