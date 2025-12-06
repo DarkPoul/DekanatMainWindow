@@ -9,5 +9,4 @@ public class DekanatMainWindowApplication {
     public static void main(String[] args) {
         SpringApplication.run(DekanatMainWindowApplication.class, args);
     }
-
 }
