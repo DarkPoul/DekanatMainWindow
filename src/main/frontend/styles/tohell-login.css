@@ -18,7 +18,7 @@ vaadin-login-overlay::part(brand) {
 
 vaadin-login-overlay vaadin-text-field::part(input-field),
 vaadin-login-overlay vaadin-password-field::part(input-field) {
-  background: transparent;
+  background: #000;
   border: 1px solid #fff;
   color: #fff;
 }
@@ -47,31 +47,10 @@ vaadin-login-overlay vaadin-login-form::part(vaadin-login-form-wrapper) {
 }
 
 vaadin-login-overlay vaadin-button[theme~="primary"] {
-  position: relative;
-  background: linear-gradient(180deg, #d40000 0%, #6a0000 100%);
+  background: #000;
   color: #fff;
-  border: none;
+  border: 1px solid #fff;
   box-shadow: none;
-}
-
-vaadin-login-overlay vaadin-button[theme~="primary"]::before,
-vaadin-login-overlay vaadin-button[theme~="primary"]::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  width: 8px;
-  height: 12px;
-  background: #6a0000;
-  border-radius: 50% 50% 60% 60%;
-}
-
-vaadin-login-overlay vaadin-button[theme~="primary"]::before {
-  left: 35%;
-}
-
-vaadin-login-overlay vaadin-button[theme~="primary"]::after {
-  left: 60%;
-  height: 10px;
 }
 
 vaadin-login-overlay::part(form) {
