@@ -19,7 +19,6 @@ public class LoginView extends LoginOverlay implements BeforeEnterObserver {
         setError(false);
         setForgotPasswordButtonVisible(false);
         setOpened(true);
-        getLoginForm().getSubmitButton().setText("ToHell");
     }
 
     @Override
@@ -39,11 +38,8 @@ public class LoginView extends LoginOverlay implements BeforeEnterObserver {
         form.setTitle("");
         form.setUsername("");
         form.setPassword("");
-        form.setSubmit("ToHell");
+        form.setSubmit("Вхід");
         form.setForgotPassword("");
-        form.setRememberMe("");
-        form.setUsernamePlaceholder("");
-        form.setPasswordPlaceholder("");
         i18n.setForm(form);
 
         LoginI18n.ErrorMessage errorMessage = i18n.getErrorMessage();
