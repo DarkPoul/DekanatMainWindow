@@ -1,38 +1,47 @@
 package esvar.ua.dekanatmainwindow.view;
 
 import com.vaadin.flow.component.dependency.CssImport;
+import com.vaadin.flow.component.login.LoginForm;
 import com.vaadin.flow.component.login.LoginI18n;
-import com.vaadin.flow.component.login.LoginOverlay;
+import com.vaadin.flow.component.orderedlayout.FlexComponent;
+import com.vaadin.flow.component.orderedlayout.FlexComponent.JustifyContentMode;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.BeforeEnterEvent;
 import com.vaadin.flow.router.BeforeEnterObserver;
 import com.vaadin.flow.router.Route;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 
 @Route("login")
-@CssImport("./styles/tohell-login.css")
+@CssImport("./styles/minimal-login.css")
 @AnonymousAllowed
-public class LoginView extends LoginOverlay implements BeforeEnterObserver {
+public class LoginView extends VerticalLayout implements BeforeEnterObserver {
+
+    private final LoginForm loginForm;
 
     public LoginView() {
-        setI18n(createSilentI18n());
-        setAction("login");
-        setError(false);
-        setForgotPasswordButtonVisible(false);
-        setOpened(true);
+        setSizeFull();
+        addClassName("login-view");
+        setPadding(false);
+        setSpacing(false);
+        setAlignItems(FlexComponent.Alignment.CENTER);
+        setJustifyContentMode(JustifyContentMode.CENTER);
+
+        loginForm = new LoginForm();
+        loginForm.setAction("login");
+        loginForm.setForgotPasswordButtonVisible(false);
+        loginForm.setError(false);
+        loginForm.setI18n(createMinimalI18n());
+
+        add(loginForm);
     }
 
     @Override
     public void beforeEnter(BeforeEnterEvent event) {
-        setError(false);
+        loginForm.setError(false);
     }
 
-    private LoginI18n createSilentI18n() {
+    private LoginI18n createMinimalI18n() {
         LoginI18n i18n = LoginI18n.createDefault();
-
-        LoginI18n.Header header = new LoginI18n.Header();
-        header.setTitle("");
-        header.setDescription("");
-        i18n.setHeader(header);
 
         LoginI18n.Form form = i18n.getForm();
         form.setTitle("");
@@ -47,6 +56,7 @@ public class LoginView extends LoginOverlay implements BeforeEnterObserver {
         errorMessage.setMessage("");
         i18n.setErrorMessage(errorMessage);
 
+        i18n.setHeader(new LoginI18n.Header());
         i18n.setAdditionalInformation("");
 
         return i18n;

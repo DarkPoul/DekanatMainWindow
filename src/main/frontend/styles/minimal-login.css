@@ -1,0 +1,57 @@
+:host(.login-view) {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+vaadin-login-form {
+  width: 320px;
+}
+
+vaadin-login-form::part(form) {
+  background: transparent;
+  padding: 0;
+  gap: 12px;
+}
+
+vaadin-login-form::part(form-title),
+vaadin-login-form::part(error-message),
+vaadin-login-form::part(additional-information) {
+  display: none;
+}
+
+vaadin-login-form vaadin-text-field::part(input-field),
+vaadin-login-form vaadin-password-field::part(input-field) {
+  background: #000;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 4px;
+}
+
+vaadin-login-form vaadin-text-field::part(value),
+vaadin-login-form vaadin-password-field::part(value) {
+  color: #fff;
+}
+
+vaadin-login-form vaadin-text-field::part(label),
+vaadin-login-form vaadin-password-field::part(label),
+vaadin-login-form vaadin-text-field::part(helper-text),
+vaadin-login-form vaadin-password-field::part(helper-text) {
+  display: none;
+}
+
+vaadin-login-form vaadin-button[theme~="primary"] {
+  background: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  box-shadow: none;
+}
+
+vaadin-login-form vaadin-button[theme~="primary"]:hover,
+vaadin-login-form vaadin-button[theme~="primary"]:focus-visible {
+  box-shadow: none;
+}
